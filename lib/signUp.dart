@@ -1,21 +1,21 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:vibelink/signUp.dart';
+import 'package:vibelink/main.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(primaryColor: Colors.purple[700]),
-    debugShowCheckedModeBanner: false,
-    home: LoginPage(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     theme: ThemeData(primaryColor: Colors.purple[700]),
+//     debugShowCheckedModeBanner: false,
+//     home: LoginPage(),
+//   ));
+// }
 
 //type in 'stl' to put in the StatelessWidget template
 //cannot change values in this Stateless Widget - make it Stateful later during development
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                 height: 30,
               ),
               Container(
-                height: 400,
+                height: 500,
                 width: 325,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 237, 236, 236),
@@ -81,11 +81,22 @@ class LoginPage extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: 'UserName/Email',
+                          hintText: 'UserName',
                         ),
                       ),
                     ),
                     SizedBox(height: 10),
+                    SizedBox(
+                      width: 280,
+                      height: 50,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Email',
+                        ),
+                      ),
+                    ),
+                    SizedBox(height:10),
                     SizedBox(
                       width: 280,
                       height: 50,
@@ -98,19 +109,18 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 52, 84, 164),
+                    SizedBox(
+                      width: 280,
+                      height: 50,
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Confirm Password',
                         ),
                       ),
-                      onPressed: () {},
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 40),
                     SizedBox(
                       width: 220,
                       height: 50,
@@ -122,7 +132,7 @@ class LoginPage extends StatelessWidget {
                         textStyle: const TextStyle(fontSize: 21),
                       ),
                       onPressed: () {},
-                      child: const Text('Login'),
+                      child: const Text('Sign Up'),
                     ),
                     ),
                     SizedBox(height: 90),
@@ -132,9 +142,10 @@ class LoginPage extends StatelessWidget {
                           Color.fromARGB(255, 52, 84, 164),
                         ),
                       ),
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));},
+                      onPressed: () {Navigator.pop(context); 
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));},
                       child: Text(
-                        'New to VibeLink? Create Account',
+                        'Signed up? Cool! Go back and Login',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
