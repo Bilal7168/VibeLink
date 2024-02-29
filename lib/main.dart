@@ -1,14 +1,14 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vibelink/dashboard.dart';
 import 'package:vibelink/signUp.dart';
 
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(primaryColor: Colors.purple[700]),
     debugShowCheckedModeBanner: false,
-    home: LoginPage(),
+    // home: LoginPage(), //when in deployment, use this
+    home: DashboardPage(), //for testing cases
   ));
 }
 
@@ -121,7 +121,7 @@ class LoginPage extends StatelessWidget {
                         // padding: const EdgeInsets.all(4.0),
                         textStyle: const TextStyle(fontSize: 21),
                       ),
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage()));},
                       child: const Text('Login'),
                     ),
                     ),

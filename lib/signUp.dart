@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:vibelink/main.dart';
@@ -59,9 +58,7 @@ class SignUpPage extends StatelessWidget {
                 height: 30,
               ),
               Container(
-                height: 500,
-                width: 325,
-                decoration: BoxDecoration(
+                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 237, 236, 236),
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -135,7 +132,7 @@ class SignUpPage extends StatelessWidget {
                       child: const Text('Sign Up'),
                     ),
                     ),
-                    SizedBox(height: 90),
+                    SizedBox(height: 50),
                     TextButton(
                       style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all<Color>(
